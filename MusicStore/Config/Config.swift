@@ -10,17 +10,7 @@ import UIKit
 
 public class Config {
 
-    let dbName = "musicstore.sqlite"
-    let destPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
-    .userDomainMask,
-    true).first
-    let fullDestPath = URL(fileURLWithPath: destPath)
-                           .appendingPathComponent(dbName)
-    let fullDestPathString = fullDestPath.path
-    let dbPath = fullDestPathString
+    let DBNAME = "musicstore.sqlite"
     
     
-    init(<#parameters#>) {
-        <#statements#>
-    }
 }
