@@ -8,7 +8,7 @@
 import GRDB
 
 
-// A plain Player struct
+// A plain Invoice struct
 struct Invoice {
     // Prefer Int64 for auto-incremented database ids
     var InvoiceId: Int
@@ -28,7 +28,7 @@ extension Invoice: Hashable { }
 
 // MARK: - Persistence
 
-// Turn Player into a Codable Record.
+// Turn Invoice into a Codable Record.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension Invoice: Codable, FetchableRecord, MutablePersistableRecord {
     // Define database columns from CodingKeys
@@ -46,7 +46,7 @@ extension Invoice: Codable, FetchableRecord, MutablePersistableRecord {
 
     }
     
-    // Update a player id after it has been inserted in the database.
+    // Update a Invoice id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
         InvoiceId = Int(rowID)
     }
@@ -54,7 +54,7 @@ extension Invoice: Codable, FetchableRecord, MutablePersistableRecord {
 
 // MARK: - Database access
 
-// Define some useful player requests.
+// Define some useful Invoice requests.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#requests
 extension Invoice {
     static func orderedByInvoiceID() -> QueryInterfaceRequest<Invoice> {
@@ -62,7 +62,7 @@ extension Invoice {
     }
     
     static func orderedByCustomerID() -> QueryInterfaceRequest<Invoice> {
-        return Invoice.order(Columns.CustomerId.desc, Columns.CustomerId)
+        return Invoice.order(Columns.CustomerId.desc)
     }
 }
 

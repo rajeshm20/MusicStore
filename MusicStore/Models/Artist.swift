@@ -8,7 +8,7 @@
 
 import GRDB
 
-// A plain Player struct
+// A plain Artist struct
 struct Artist {
     // Prefer Int64 for auto-incremented database ids
     var ArtistId: Int
@@ -20,7 +20,7 @@ extension Artist: Hashable { }
 
 // MARK: - Persistence
 
-// Turn Player into a Codable Record.
+// Turn Artist into a Codable Record.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension Artist: Codable, FetchableRecord, MutablePersistableRecord {
     // Define database columns from CodingKeys
@@ -29,7 +29,7 @@ extension Artist: Codable, FetchableRecord, MutablePersistableRecord {
         static let Name = Column(CodingKeys.Name)
     }
     
-    // Update a player id after it has been inserted in the database.
+    // Update a Artist id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
         ArtistId = Int(rowID)
     }
@@ -37,7 +37,7 @@ extension Artist: Codable, FetchableRecord, MutablePersistableRecord {
 
 // MARK: - Database access
 
-// Define some useful player requests.
+// Define some useful Artist requests.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#requests
 extension Artist {
     static func orderedByName() -> QueryInterfaceRequest<Artist> {
@@ -49,24 +49,3 @@ extension Artist {
     }
 }
 
-// MARK: - Player Randomization
-
-//extension Player {
-//    private static let names = [
-//        "Arthur", "Anita", "Barbara", "Bernard", "Craig", "Chiara", "David",
-//        "Dean", "Éric", "Elena", "Fatima", "Frederik", "Gilbert", "Georgette",
-//        "Henriette", "Hassan", "Ignacio", "Irene", "Julie", "Jack", "Karl",
-//        "Kristel", "Louis", "Liz", "Masashi", "Mary", "Noam", "Nicole",
-//        "Ophelie", "Oleg", "Pascal", "Patricia", "Quentin", "Quinn", "Raoul",
-//        "Rachel", "Stephan", "Susie", "Tristan", "Tatiana", "Ursule", "Urbain",
-//        "Victor", "Violette", "Wilfried", "Wilhelmina", "Yvon", "Yann",
-//        "Zazie", "Zoé"]
-//
-//    static func randomName() -> String {
-//        return names.randomElement()!
-//    }
-//
-//    static func randomScore() -> Int {
-//        return 10 * Int.random(in: 0...100)
-//    }
-//}

@@ -9,7 +9,7 @@
 
 import GRDB
 
-// A plain Player struct
+// A plain Genre struct
 struct Genre {
     // Prefer Int64 for auto-incremented database ids
     var GenreId: Int
@@ -21,7 +21,7 @@ extension Genre: Hashable { }
 
 // MARK: - Persistence
 
-// Turn Player into a Codable Record.
+// Turn Genre into a Codable Record.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension Genre: Codable, FetchableRecord, MutablePersistableRecord {
     // Define database columns from CodingKeys
@@ -30,7 +30,7 @@ extension Genre: Codable, FetchableRecord, MutablePersistableRecord {
         static let Name = Column(CodingKeys.Name)
     }
     
-    // Update a player id after it has been inserted in the database.
+    // Update a Genre id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
         GenreId = Int(rowID)
     }
@@ -38,7 +38,7 @@ extension Genre: Codable, FetchableRecord, MutablePersistableRecord {
 
 // MARK: - Database access
 
-// Define some useful player requests.
+// Define some useful Genre requests.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#requests
 extension Genre {
     static func orderedByGenreID() -> QueryInterfaceRequest<Genre> {
@@ -46,7 +46,7 @@ extension Genre {
     }
     
     static func orderedByName() -> QueryInterfaceRequest<Genre> {
-        return Genre.order(Columns.Name.desc, Columns.Name)
+        return Genre.order(Columns.GenreId.desc, Columns.Name)
     }
 }
 

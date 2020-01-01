@@ -27,7 +27,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+        self.albumTableView.register(UINib(nibName: "AlbumCell", bundle: nil), forCellReuseIdentifier: "albumCell")
+
         
     }
 
@@ -76,10 +77,9 @@ class ViewController: UIViewController {
     
     func getImage(imgName: String) -> UIImage {
         
-        let bundle = Bundle.main
+//        let bundle = Bundle.main
         
-        let imageyrl = bundle.path(forResource: imgName, ofType: "jpg")
-        let image = UIImage(contentsOfFile: imageyrl!)
+        let image = UIImage(named: imgName)
         
         if image != nil {
             
@@ -87,8 +87,7 @@ class ViewController: UIViewController {
             
         } else {
             
-            let imageyrl = bundle.path(forResource: "paceholder", ofType: "png")
-            let image = UIImage(contentsOfFile: imageyrl!)
+            let image = UIImage(named: "placeholder")
             return image!
         }
     }

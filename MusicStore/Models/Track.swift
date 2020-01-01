@@ -8,7 +8,7 @@
 
 import GRDB
 
-// A plain Player struct
+// A plain Track struct
 struct Track {
     // Prefer Int64 for auto-incremented database ids
     var TrackId: Int
@@ -29,7 +29,7 @@ extension Track: Hashable { }
 
 // MARK: - Persistence
 
-// Turn Player into a Codable Record.
+// Turn Track into a Codable Record.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension Track: Codable, FetchableRecord, MutablePersistableRecord {
     // Define database columns from CodingKeys
@@ -46,7 +46,7 @@ extension Track: Codable, FetchableRecord, MutablePersistableRecord {
 
     }
     
-    // Update a player id after it has been inserted in the database.
+    // Update a Track id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
         TrackId = Int(rowID)
     }
@@ -54,14 +54,14 @@ extension Track: Codable, FetchableRecord, MutablePersistableRecord {
 
 // MARK: - Database access
 
-// Define some useful player requests.
+// Define some useful Track requests.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#requests
 extension Track {
-    static func orderedByName() -> QueryInterfaceRequest<Track> {
+    static func orderedByTrackName() -> QueryInterfaceRequest<Track> {
         return Track.order(Columns.Name)
     }
     
-    static func orderedByScore() -> QueryInterfaceRequest<Track> {
+    static func orderedByTrackID() -> QueryInterfaceRequest<Track> {
         return Track.order(Columns.TrackId.desc, Columns.Name)
     }
 }

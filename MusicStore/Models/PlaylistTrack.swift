@@ -8,7 +8,7 @@
 
 import GRDB
 
-// A plain Player struct
+// A plain PlaylistTrack struct
 struct PlaylistTrack {
     // Prefer Int64 for auto-incremented database ids
     var PlaylistId: Int
@@ -20,7 +20,7 @@ extension PlaylistTrack: Hashable { }
 
 // MARK: - Persistence
 
-// Turn Player into a Codable Record.
+// Turn PlaylistTrack into a Codable Record.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension PlaylistTrack: Codable, FetchableRecord, MutablePersistableRecord {
     // Define database columns from CodingKeys
@@ -29,7 +29,7 @@ extension PlaylistTrack: Codable, FetchableRecord, MutablePersistableRecord {
         static let TrackId = Column(CodingKeys.TrackId)
     }
     
-    // Update a player id after it has been inserted in the database.
+    // Update a PlaylistTrack id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
         PlaylistId = Int(rowID)
     }
@@ -37,14 +37,14 @@ extension PlaylistTrack: Codable, FetchableRecord, MutablePersistableRecord {
 
 // MARK: - Database access
 
-// Define some useful player requests.
+// Define some useful PlaylistTrack requests.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#requests
 extension PlaylistTrack {
-    static func orderedByName() -> QueryInterfaceRequest<PlaylistTrack> {
+    static func orderedByPlayListID() -> QueryInterfaceRequest<PlaylistTrack> {
         return PlaylistTrack.order(Columns.PlaylistId)
     }
     
-    static func orderedByScore() -> QueryInterfaceRequest<PlaylistTrack> {
+    static func orderedByTrackID() -> QueryInterfaceRequest<PlaylistTrack> {
         return PlaylistTrack.order(Columns.TrackId.desc, Columns.TrackId)
     }
 }

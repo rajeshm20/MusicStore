@@ -1,6 +1,6 @@
 import GRDB
 
-// A plain Player struct
+// A plain Album struct
 struct Album {
     // Prefer Int64 for auto-incremented database ids
     var AlbumId: Int
@@ -13,7 +13,7 @@ extension Album: Hashable { }
 
 // MARK: - Persistence
 
-// Turn Player into a Codable Record.
+// Turn Album into a Codable Record.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension Album: Codable, FetchableRecord, MutablePersistableRecord {
     // Define database columns from CodingKeys
@@ -23,7 +23,7 @@ extension Album: Codable, FetchableRecord, MutablePersistableRecord {
         static let ArtistId = Column(CodingKeys.ArtistId)
     }
     
-    // Update a player id after it has been inserted in the database.
+    // Update a Album id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
         AlbumId = Int(rowID)
     }
@@ -31,14 +31,14 @@ extension Album: Codable, FetchableRecord, MutablePersistableRecord {
 
 // MARK: - Database access
 
-// Define some useful player requests.
+// Define some useful Album requests.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#requests
 extension Album {
-    static func orderedByName() -> QueryInterfaceRequest<Album> {
-        return Album.order(Columns.Title)
+    static func orderedByArtistID() -> QueryInterfaceRequest<Album> {
+        return Album.order(Columns.ArtistId, Columns.Title)
     }
     
-    static func orderedByScore() -> QueryInterfaceRequest<Album> {
+    static func orderedByAlbumID() -> QueryInterfaceRequest<Album> {
         return Album.order(Columns.AlbumId.desc, Columns.Title)
     }
 }

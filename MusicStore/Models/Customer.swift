@@ -9,7 +9,7 @@
 
 import GRDB
 
-// A plain Player struct
+// A plain Customer struct
 struct Customer {
     // Prefer Int64 for auto-incremented database ids
     var CustomerId: Int
@@ -33,7 +33,7 @@ extension Customer: Hashable { }
 
 // MARK: - Persistence
 
-// Turn Player into a Codable Record.
+// Turn Customer into a Codable Record.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension Customer: Codable, FetchableRecord, MutablePersistableRecord {
     // Define database columns from CodingKeys
@@ -55,7 +55,7 @@ extension Customer: Codable, FetchableRecord, MutablePersistableRecord {
 
     }
     
-    // Update a player id after it has been inserted in the database.
+    // Update a Customer id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
         CustomerId = Int(rowID)
     }
@@ -63,7 +63,7 @@ extension Customer: Codable, FetchableRecord, MutablePersistableRecord {
 
 // MARK: - Database access
 
-// Define some useful player requests.
+// Define some useful Customer requests.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#requests
 extension Customer {
     static func orderedByFirstName() -> QueryInterfaceRequest<Customer> {

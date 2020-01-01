@@ -8,7 +8,7 @@
 
 import GRDB
 
-// A plain Player struct
+// A plain MediaType struct
 struct MediaType {
     // Prefer Int64 for auto-incremented database ids
     var MediaTypeId: Int
@@ -20,7 +20,7 @@ extension MediaType: Hashable { }
 
 // MARK: - Persistence
 
-// Turn Player into a Codable Record.
+// Turn MediaType into a Codable Record.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension MediaType: Codable, FetchableRecord, MutablePersistableRecord {
     // Define database columns from CodingKeys
@@ -29,7 +29,7 @@ extension MediaType: Codable, FetchableRecord, MutablePersistableRecord {
         static let Name = Column(CodingKeys.Name)
     }
     
-    // Update a player id after it has been inserted in the database.
+    // Update a MediaType id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
         MediaTypeId = Int(rowID)
     }
@@ -37,7 +37,7 @@ extension MediaType: Codable, FetchableRecord, MutablePersistableRecord {
 
 // MARK: - Database access
 
-// Define some useful player requests.
+// Define some useful MediaType requests.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#requests
 extension MediaType {
     static func orderedByID() -> QueryInterfaceRequest<MediaType> {
@@ -45,7 +45,7 @@ extension MediaType {
     }
     
     static func orderedByName() -> QueryInterfaceRequest<Playlist> {
-        return Playlist.order(Columns.Name.desc, Columns.Name)
+        return Playlist.order(Columns.MediaTypeId.desc, Columns.Name)
     }
 }
 

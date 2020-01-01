@@ -7,7 +7,7 @@
 //
 import GRDB
 
-// A plain Player struct
+// A plain Employee struct
 struct Employee {
     // Prefer Int64 for auto-incremented database ids
     var EmployeeId: Int
@@ -34,7 +34,7 @@ extension Employee: Hashable { }
 
 // MARK: - Persistence
 
-// Turn Player into a Codable Record.
+// Turn Employee into a Codable Record.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension Employee: Codable, FetchableRecord, MutablePersistableRecord {
     // Define database columns from CodingKeys
@@ -58,7 +58,7 @@ extension Employee: Codable, FetchableRecord, MutablePersistableRecord {
 
     }
     
-    // Update a player id after it has been inserted in the database.
+    // Update a Employee id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
         EmployeeId = Int(rowID)
     }
@@ -66,7 +66,7 @@ extension Employee: Codable, FetchableRecord, MutablePersistableRecord {
 
 // MARK: - Database access
 
-// Define some useful player requests.
+// Define some useful query requests.
 // See https://github.com/groue/GRDB.swift/blob/master/README.md#requests
 extension Employee {
     static func orderedByFirstName() -> QueryInterfaceRequest<Employee> {
@@ -74,7 +74,7 @@ extension Employee {
     }
     
     static func orderedByEmployeeID() -> QueryInterfaceRequest<Employee> {
-        return Employee.order(Columns.EmployeeId.desc, Columns.FirstName)
+        return Employee.order(Columns.EmployeeId.desc)
     }
 }
 
