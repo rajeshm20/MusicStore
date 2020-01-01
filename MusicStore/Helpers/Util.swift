@@ -24,6 +24,9 @@ public class Util {
         if fileManager.fileExists(atPath: fullDestPathString) {
             
             return fullDestPathString
+        } else {
+            
+            return ""
         }
 
     }

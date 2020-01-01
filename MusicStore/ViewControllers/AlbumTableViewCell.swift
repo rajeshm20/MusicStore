@@ -9,10 +9,16 @@
 import UIKit
 
 class AlbumTableViewCell: UITableViewCell {
+    
+    @IBOutlet var albumTitleLabel: UILabel!
+    @IBOutlet var artistNameLabel: UILabel!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        albumTitleLabel.text = ""
+        artistNameLabel.text = "By: "
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

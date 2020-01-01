@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import GRDB
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,23 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        let bundlePath = Bundle.main.path(forResource: "musicstore", ofType: "sqlite")
-//
+        
         let fileManager = FileManager.default
-//        let dstPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-//        let fullDestPath = NSURL(fileURLWithPath: dstPath).appendingPathComponent("musicstore.sqlite")
-//        let fullDestPathString = fullDestPath?.path
-//
-//        do
-//        {
-//            try fileManager.copyItem(atPath: bundlePath!, toPath: fullDestPathString!)
-//            print("DB Copied")
-//        }
-//        catch
-//        {
-//            print("\n")
-//            print(error)
-//        }
         do{
         try fileManager.copyfileToUserDocumentDirectory(forResource: "musicstore", ofType: "sqlite")
             print("db copied")
@@ -42,6 +29,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("\n")
             print("database not copied-\(error)")
         }
+        
+        
+        let destPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                            .userDomainMask,
+                            true).first
+        let fileName = Config().DBNAME
+        let fullDestPath = URL(fileURLWithPath: destPath!)
+                               .appendingPathComponent(fileName)
+        let fullDestPathString = fullDestPath.path
+
+        if fileManager.fileExists(atPath: fullDestPathString) {
+            do{
+                //setting up database queue
+                let dbQueue = try DatabaseQueue(path:fullDestPathString)
+                //Fetch records and count from database
+                 try dbQueue.read { db in
+                    let albums = try Album.fetchAll(db)
+                    let albumCount = try Album.fetchCount(db)
+                    
+                    print("all albums: ", albums)
+                    print("albums count",albumCount)
+                }
+                
+            } catch {
+                
+                print("db error: \(error)")
+            }
+        }
+        
         return true
     }
 
