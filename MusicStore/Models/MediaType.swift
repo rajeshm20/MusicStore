@@ -49,24 +49,3 @@ extension MediaType {
     }
 }
 
-// MARK: - Player Randomization
-
-//extension Player {
-//    private static let names = [
-//        "Arthur", "Anita", "Barbara", "Bernard", "Craig", "Chiara", "David",
-//        "Dean", "Éric", "Elena", "Fatima", "Frederik", "Gilbert", "Georgette",
-//        "Henriette", "Hassan", "Ignacio", "Irene", "Julie", "Jack", "Karl",
-//        "Kristel", "Louis", "Liz", "Masashi", "Mary", "Noam", "Nicole",
-//        "Ophelie", "Oleg", "Pascal", "Patricia", "Quentin", "Quinn", "Raoul",
-//        "Rachel", "Stephan", "Susie", "Tristan", "Tatiana", "Ursule", "Urbain",
-//        "Victor", "Violette", "Wilfried", "Wilhelmina", "Yvon", "Yann",
-//        "Zazie", "Zoé"]
-//
-//    static func randomName() -> String {
-//        return names.randomElement()!
-//    }
-//
-//    static func randomScore() -> Int {
-//        return 10 * Int.random(in: 0...100)
-//    }
-//}
