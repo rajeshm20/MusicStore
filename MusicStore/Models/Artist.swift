@@ -11,7 +11,7 @@ import GRDB
 // A plain Artist struct
 struct Artist {
     // Prefer Int64 for auto-incremented database ids
-    var ArtistId: Int
+    var ArtistId: Int64
     var Name: String
 }
 
@@ -31,7 +31,7 @@ extension Artist: Codable, FetchableRecord, MutablePersistableRecord {
     
     // Update a Artist id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
-        ArtistId = Int(rowID)
+        ArtistId = rowID
     }
 }
 

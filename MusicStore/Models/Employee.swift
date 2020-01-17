@@ -10,7 +10,7 @@ import GRDB
 // A plain Employee struct
 struct Employee {
     // Prefer Int64 for auto-incremented database ids
-    var EmployeeId: Int
+    var EmployeeId: Int64
     var LastName: String
     var FirstName: String
     var Title: String
@@ -60,7 +60,7 @@ extension Employee: Codable, FetchableRecord, MutablePersistableRecord {
     
     // Update a Employee id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
-        EmployeeId = Int(rowID)
+        EmployeeId = rowID
     }
 }
 

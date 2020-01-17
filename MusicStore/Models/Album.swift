@@ -3,7 +3,7 @@ import GRDB
 // A plain Album struct
 struct Album {
     // Prefer Int64 for auto-incremented database ids
-    var AlbumId: Int
+    var AlbumId: Int64
     var Title: String
     var ArtistId: Int
 }
@@ -25,7 +25,7 @@ extension Album: Codable, FetchableRecord, MutablePersistableRecord {
     
     // Update a Album id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
-        AlbumId = Int(rowID)
+        AlbumId = rowID
     }
 }
 

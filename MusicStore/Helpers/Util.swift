@@ -30,6 +30,21 @@ public class Util {
         }
 
     }
+    
+    func getImage(imgName: String) -> UIImage {
+               print("imgName: \(imgName)")
+           let image = UIImage(named: imgName)
+           
+           if image != nil {
+               
+               return image!
+               
+           } else {
+               
+               let image = UIImage(named: "placeholder")
+               return image!
+           }
+       }
 }
 
 

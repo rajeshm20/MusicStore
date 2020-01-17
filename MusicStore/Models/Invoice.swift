@@ -11,7 +11,7 @@ import GRDB
 // A plain Invoice struct
 struct Invoice {
     // Prefer Int64 for auto-incremented database ids
-    var InvoiceId: Int
+    var InvoiceId: Int64
     var CustomerId: Int
     var InvoiceDate: Date
     var BillingAddress: String
@@ -48,7 +48,7 @@ extension Invoice: Codable, FetchableRecord, MutablePersistableRecord {
     
     // Update a Invoice id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
-        InvoiceId = Int(rowID)
+        InvoiceId = rowID
     }
 }
 

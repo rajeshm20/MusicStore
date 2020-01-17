@@ -12,7 +12,7 @@ import GRDB
 // A plain Customer struct
 struct Customer {
     // Prefer Int64 for auto-incremented database ids
-    var CustomerId: Int
+    var CustomerId: Int64
     var LastName: String
     var FirstName: String
     var Company: String
@@ -57,7 +57,7 @@ extension Customer: Codable, FetchableRecord, MutablePersistableRecord {
     
     // Update a Customer id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
-        CustomerId = Int(rowID)
+        CustomerId = rowID
     }
 }
 

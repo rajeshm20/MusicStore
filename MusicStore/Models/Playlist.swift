@@ -11,7 +11,7 @@ import GRDB
 // A plain Playlist struct
 struct Playlist {
     // Prefer Int64 for auto-incremented database ids
-    var PlaylistId: Int
+    var PlaylistId: Int64
     var Name: String
 }
 
@@ -31,7 +31,7 @@ extension Playlist: Codable, FetchableRecord, MutablePersistableRecord {
     
     // Update a Playlist id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
-        PlaylistId = Int(rowID)
+        PlaylistId = rowID
     }
 }
 

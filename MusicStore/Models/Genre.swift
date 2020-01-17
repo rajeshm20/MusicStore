@@ -12,7 +12,7 @@ import GRDB
 // A plain Genre struct
 struct Genre {
     // Prefer Int64 for auto-incremented database ids
-    var GenreId: Int
+    var GenreId: Int64
     var Name: String
 }
 
@@ -32,7 +32,7 @@ extension Genre: Codable, FetchableRecord, MutablePersistableRecord {
     
     // Update a Genre id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
-        GenreId = Int(rowID)
+        GenreId = rowID
     }
 }
 

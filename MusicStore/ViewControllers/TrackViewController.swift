@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import GRDB
+import GRDB	
 
 class TrackViewController: UIViewController {
 
     @IBOutlet weak var albumImageView: UIImageView!
     
     @IBOutlet weak var trackTableView: UITableView!
-    var artistID:Int?=nil
-    var albumID:Int?=nil
+    var artistID:Int64?=0
+    var albumID:Int64?=nil
     var tracks = [Track]()
     var trackCount:Int?=nil
     var genres = [Genre]()
@@ -27,8 +27,8 @@ class TrackViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchGentreand()
-             fetchMediaType()
+        fetchGenreand()
+        fetchMediaType()
              
              if albumID != nil {
                 print("albumid: \(String(describing: albumID))")
@@ -42,13 +42,13 @@ class TrackViewController: UIViewController {
              }
              
         self.trackTableView.register(UINib(nibName: "TrackTableViewCell", bundle: nil), forCellReuseIdentifier: "trackCell")
-        let artistid = "\(String(describing: artistID))"
-        albumImageView.image = Util().getImage(imgName: artistid)
+
+        albumImageView.image = Util().getImage(imgName: "\(artistID!)")
         // Do any additional setup after loading the view.
         print("tracksfetched: \(tracks)")
     }
     
-    func fetchTrackByAlbumID(id: Int){
+    func fetchTrackByAlbumID(id: Int64){
         
         let dbPath = Util().getDbPathString()
         do {
@@ -67,7 +67,7 @@ class TrackViewController: UIViewController {
         
     }
     
-    func fetchGentreand(){
+    func fetchGenreand(){
         
         let dbPath = Util().getDbPathString()
         do {
@@ -123,7 +123,6 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell") as! TrackTableViewCell
-        
         
         return cell
     }

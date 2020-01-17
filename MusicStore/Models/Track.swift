@@ -11,7 +11,7 @@ import GRDB
 // A plain Track struct
 struct Track {
     // Prefer Int64 for auto-incremented database ids
-    var TrackId: Int
+    var TrackId: Int64
     var Name: String
     var AlbumId: Int
     var MediaTypeId: Int
@@ -48,7 +48,7 @@ extension Track: Codable, FetchableRecord, MutablePersistableRecord {
     
     // Update a Track id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
-        TrackId = Int(rowID)
+        TrackId = rowID
     }
 }
 

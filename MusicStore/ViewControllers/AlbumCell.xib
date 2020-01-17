@@ -29,22 +29,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSK-VB-USM">
                                 <rect key="frame" x="136" y="8" width="345" height="97"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFV-7m-lWn">
-                                        <rect key="frame" x="4" y="1" width="337" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFV-7m-lWn">
+                                        <rect key="frame" x="4" y="1" width="337" height="43"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="4qH-Sa-JEk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJP-ux-o6H">
-                                        <rect key="frame" x="4" y="34" width="329" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJP-ux-o6H">
+                                        <rect key="frame" x="8" y="52" width="329" height="27"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="fB7-pr-MVs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="IJP-ux-o6H" secondAttribute="bottom" constant="18" id="9q3-M6-pfz"/>
+                                    <constraint firstItem="kFV-7m-lWn" firstAttribute="leading" secondItem="HSK-VB-USM" secondAttribute="leading" constant="4" id="ZYw-8l-gWP"/>
+                                    <constraint firstItem="kFV-7m-lWn" firstAttribute="centerX" secondItem="IJP-ux-o6H" secondAttribute="centerX" id="d21-wq-PjY"/>
+                                    <constraint firstItem="IJP-ux-o6H" firstAttribute="top" secondItem="kFV-7m-lWn" secondAttribute="bottom" constant="8" id="hdi-eZ-gsf"/>
+                                    <constraint firstItem="kFV-7m-lWn" firstAttribute="top" secondItem="HSK-VB-USM" secondAttribute="top" constant="1" id="jVy-hl-nfZ"/>
+                                    <constraint firstItem="IJP-ux-o6H" firstAttribute="leading" secondItem="HSK-VB-USM" secondAttribute="leadingMargin" id="wGb-Kt-7PG"/>
+                                    <constraint firstItem="IJP-ux-o6H" firstAttribute="trailing" secondItem="HSK-VB-USM" secondAttribute="trailingMargin" id="x6B-0m-yOu"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -59,7 +74,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="6T6-fr-hir" secondAttribute="bottom" constant="9" id="Isf-fV-E8V"/>
                     <constraint firstAttribute="trailing" secondItem="6T6-fr-hir" secondAttribute="trailing" constant="11" id="PyW-IC-Pmv"/>
@@ -73,7 +88,7 @@
                 <outlet property="albumTitleLabel" destination="kFV-7m-lWn" id="X9W-Rz-XYj"/>
                 <outlet property="artistNameLabel" destination="IJP-ux-o6H" id="m7T-zI-ER9"/>
             </connections>
-            <point key="canvasLocation" x="714" y="58"/>
+            <point key="canvasLocation" x="175" y="146"/>
         </tableViewCell>
     </objects>
     <resources>

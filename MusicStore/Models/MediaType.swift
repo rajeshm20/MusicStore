@@ -11,7 +11,7 @@ import GRDB
 // A plain MediaType struct
 struct MediaType {
     // Prefer Int64 for auto-incremented database ids
-    var MediaTypeId: Int
+    var MediaTypeId: Int64
     var Name: String
 }
 
@@ -31,7 +31,7 @@ extension MediaType: Codable, FetchableRecord, MutablePersistableRecord {
     
     // Update a MediaType id after it has been inserted in the database.
     mutating func didInsert(with rowID: Int64, for column: String?) {
-        MediaTypeId = Int(rowID)
+        MediaTypeId = rowID
     }
 }
 

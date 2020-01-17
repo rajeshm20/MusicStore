@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     
     var artists = [Artist]()
     var artistCount: Int?=nil
-
-    override func viewWillAppear(_ animated: Bool) {
+ 
+     override func viewWillAppear(_ animated: Bool) {
         self.getAlbumData()
         self.getArtisData()
     }
@@ -60,9 +60,9 @@ class ViewController: UIViewController {
             //setting up database queue
             let dbQueue = try DatabaseQueue(path:dbPath)
             //Fetch records and count from database
-             try dbQueue.read { db in
-                 artists = try Artist.fetchAll(db)
-                 artistCount = try Artist.fetchCount(db)
+            try dbQueue.read { db in
+                artists = try Artist.fetchAll(db)
+                artistCount = try Artist.fetchCount(db)
                 
                 print("all albums: ", artists)
                 print("albums count", artistCount as Any)
@@ -72,25 +72,34 @@ class ViewController: UIViewController {
             
             print("db error: \(error)")
         }
+        
+    }
+    
+     func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+        if segue!.identifier == "toTrack" {
+            let viewController:TrackViewController = segue!.destination as! TrackViewController
+            let indexPath = self.albumTableView.indexPathForSelectedRow
+//            viewController.albumID = self.albums[(sender?.indexPath.row)!].AlbumId
+            viewController.albumID = self.albums[(indexPath?.row)!].AlbumId
+            viewController.artistID = self.artists[(indexPath?.row)!].ArtistId
+
+        }
 
     }
     
-    func getImage(imgName: String) -> UIImage {
+    
+    func openTracksOfSelectedAlbumByID(albumID: Int64, artistID: Int64){
         
-//        let bundle = Bundle.main
-        
-        let image = UIImage(named: imgName)
-        
-        if image != nil {
-            
-            return image!
-            
-        } else {
-            
-            let image = UIImage(named: "placeholder")
-            return image!
-        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "TrackViewController") as! TrackViewController
+        controller.albumID = albumID
+        controller.artistID = artistID
+
+        self.present(controller, animated: true, completion: nil)
+
     }
+    
+    
 
 }
 
@@ -101,21 +110,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let albumCell = albumTableView.dequeueReusableCell(withIdentifier: "albumCell", for: indexPath) as! AlbumCell
+        let albumCell = albumTableView.dequeueReusableCell(withIdentifier: "albumCell") as! AlbumCell
         let album = albums[indexPath.row]
         let artistID = album.ArtistId
         let artistName = artists[artistID].Name
         albumCell.albumTitleLabel.text = album.Title
         albumCell.artistNameLabel.text = "By:  \(artistName)"
-        albumCell.albumImageView.image = self.getImage(imgName: "\(artistID)")
+        albumCell.albumImageView.image = Util().getImage(imgName: "\(artistID)")
         
         return albumCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         let selected = albums[indexPath.row]
         let artist = artists[selected.ArtistId].Name
-        print("user tapped album \(selected.Title) by \(artist)")
+        let artistID = albums[indexPath.row].ArtistId
+        print("user tapped album \(selected.AlbumId) \(selected.Title) by \(artist), artistID:\(artistID)")
+        openTracksOfSelectedAlbumByID(albumID: selected.AlbumId, artistID: Int64(artistID))
+        
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -10,6 +10,9 @@
 		09D13CB3B1DE1FFCC810A666 /* Pods_MusicStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D97BD6A2FC54E8A7988C88 /* Pods_MusicStoreTests.framework */; };
 		28F552469E640192668A3B33 /* Pods_MusicStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0FF22AC5D916A79A1B8748 /* Pods_MusicStore.framework */; };
 		9D7680880447344C80CBBBCE /* Pods_MusicStore_MusicStoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3BE03D49D789CD6F806B0E /* Pods_MusicStore_MusicStoreUITests.framework */; };
+		F106506E23C8E19B003902C0 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106506D23C8E19B003902C0 /* TrackViewController.swift */; };
+		F106507323C8E556003902C0 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106507123C8E556003902C0 /* TrackTableViewCell.swift */; };
+		F106507423C8E556003902C0 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F106507223C8E556003902C0 /* TrackTableViewCell.xib */; };
 		F12072D023BCBCE40029E9BA /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072CF23BCBCE40029E9BA /* Track.swift */; };
 		F12072D223BCBFFF0029E9BA /* PlaylistTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072D123BCBFFF0029E9BA /* PlaylistTrack.swift */; };
 		F12072D423BCC1240029E9BA /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072D323BCC1240029E9BA /* Playlist.swift */; };
@@ -66,6 +69,9 @@
 		9F5C3091B69DA7BEAF07DA30 /* Pods-MusicStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicStore.debug.xcconfig"; path = "Target Support Files/Pods-MusicStore/Pods-MusicStore.debug.xcconfig"; sourceTree = "<group>"; };
 		D3210F276599B801805DEDAA /* Pods-MusicStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicStore.release.xcconfig"; path = "Target Support Files/Pods-MusicStore/Pods-MusicStore.release.xcconfig"; sourceTree = "<group>"; };
 		DF3BE03D49D789CD6F806B0E /* Pods_MusicStore_MusicStoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicStore_MusicStoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F106506D23C8E19B003902C0 /* TrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
+		F106507123C8E556003902C0 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		F106507223C8E556003902C0 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
 		F12072CF23BCBCE40029E9BA /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		F12072D123BCBFFF0029E9BA /* PlaylistTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTrack.swift; sourceTree = "<group>"; };
 		F12072D323BCC1240029E9BA /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
@@ -189,9 +195,9 @@
 				F157E36123B78CFD00C06F4B /* Controllers */,
 				F157E35C23B78CFD00C06F4B /* Database */,
 				F157E36023B78CFD00C06F4B /* Models */,
+				F157E36423B78CFD00C06F4B /* ViewControllers */,
 				F157E36623B78CFD00C06F4B /* Resources */,
 				F157E36823B78CFD00C06F4B /* Storyboards */,
-				F157E36423B78CFD00C06F4B /* ViewControllers */,
 			);
 			path = MusicStore;
 			sourceTree = "<group>";
@@ -266,6 +272,9 @@
 				F157E37B23B7C20B00C06F4B /* AlbumTableViewCell.swift */,
 				F1ECCF7123BBC1E600B14F22 /* AlbumCell.swift */,
 				F1ECCF7223BBC1E600B14F22 /* AlbumCell.xib */,
+				F106506D23C8E19B003902C0 /* TrackViewController.swift */,
+				F106507123C8E556003902C0 /* TrackTableViewCell.swift */,
+				F106507223C8E556003902C0 /* TrackTableViewCell.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -397,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F157E36E23B78CFD00C06F4B /* Info.plist in Resources */,
+				F106507423C8E556003902C0 /* TrackTableViewCell.xib in Resources */,
 				F1ECCF7423BBC1E600B14F22 /* AlbumCell.xib in Resources */,
 				F157E37623B78CFD00C06F4B /* Main.storyboard in Resources */,
 				F157E37523B78CFD00C06F4B /* LaunchScreen.storyboard in Resources */,
@@ -533,6 +543,7 @@
 				F12072DE23BCC96A0029E9BA /* Employee.swift in Sources */,
 				F12072D823BCC3170029E9BA /* InVoiceLine.swift in Sources */,
 				F12072D423BCC1240029E9BA /* Playlist.swift in Sources */,
+				F106506E23C8E19B003902C0 /* TrackViewController.swift in Sources */,
 				F12072D023BCBCE40029E9BA /* Track.swift in Sources */,
 				F1312C2123B8687B00E8791D /* Util.swift in Sources */,
 				F12072DA23BCC57E0029E9BA /* Invoice.swift in Sources */,
@@ -541,6 +552,7 @@
 				F12072D623BCC1F00029E9BA /* MediaType.swift in Sources */,
 				F157E36F23B78CFD00C06F4B /* MusicStore.xcdatamodeld in Sources */,
 				F12072DC23BCC8180029E9BA /* Genre.swift in Sources */,
+				F106507323C8E556003902C0 /* TrackTableViewCell.swift in Sources */,
 				F12072E023BCCC8B0029E9BA /* Customer.swift in Sources */,
 				F157E37223B78CFD00C06F4B /* SceneDelegate.swift in Sources */,
 				F157E37823B7B4C500C06F4B /* Album.swift in Sources */,
