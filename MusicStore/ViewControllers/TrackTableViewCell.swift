@@ -9,7 +9,20 @@
 import UIKit
 
 class TrackTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var unitPriceLabel: UILabel!
+    
+    @IBOutlet weak var bytesLabel: UILabel!
+//    @IBOutlet weak var millisecondsLabel: UILabel!
+    
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var trackNameLabel: UILabel!
+    
+    @IBOutlet weak var mediaType: UILabel!
+    
+    @IBOutlet weak var genreLabel: UILabel!
+    
+    @IBOutlet weak var composerLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

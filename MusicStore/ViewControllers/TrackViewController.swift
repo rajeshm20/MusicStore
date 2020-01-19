@@ -123,11 +123,41 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell") as! TrackTableViewCell
+        let track = tracks[indexPath.row]
+        cell.trackNameLabel.text = "Track Name: " + track.Name
+        let price = Double(track.UnitPrice)
+        cell.unitPriceLabel.text = "Unit Price: $\(price)"
+        cell.mediaType.text = "Medica Type: " + mediaTypes[track.MediaTypeId].Name
+        cell.genreLabel.text = "Genre: " + genres[track.GenreId].Name
+        var composer: String?=nil
+        composer = track.Composer
+        if composer == nil {
+            
+            cell.composerLabel.text = "Composer: "
+            
+        } else {
+            
+            cell.composerLabel.text = "Composer: " + composer!
+            
+        }
+        let toMB = (track.Bytes / 1024) / 1024
         
+        cell.bytesLabel.text = "Size: " + String(toMB) + " MB"
+        
+        let inMinutes = track.Milliseconds / 60000
+        
+        cell.durationLabel.text = "Duration: " + String(inMinutes) + " minutes"
+        
+        
+        
+        
+
         return cell
     }
     
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 271
+    }
     
 }

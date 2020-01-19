@@ -16,12 +16,10 @@ struct Track {
     var AlbumId: Int
     var MediaTypeId: Int
     var GenreId: Int
-    var Composer: String
+    var Composer: String?
     var Milliseconds: Int
     var Bytes: Int
-    var UnitPrice: Int
-    
-
+    var UnitPrice: Double
 }
 
 // Hashable conformance supports tableView diffing
@@ -43,7 +41,6 @@ extension Track: Codable, FetchableRecord, MutablePersistableRecord {
         static let Milliseconds = Column(CodingKeys.Milliseconds)
         static let Bytes = Column(CodingKeys.Bytes)
         static let UnitPrice = Column(CodingKeys.UnitPrice)
-
     }
     
     // Update a Track id after it has been inserted in the database.
