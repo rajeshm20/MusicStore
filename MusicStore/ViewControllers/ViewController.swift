@@ -34,10 +34,8 @@ class ViewController: UIViewController {
 
 
     func getAlbumData(){
-        let dbPath = Util().getDbPathString()
         do{
             //setting up database queue
-            let dbQueue = try DatabaseQueue(path:dbPath)
             //Fetch records and count from database
              try dbQueue.read { db in
                  albums = try Album.fetchAll(db)
@@ -55,10 +53,8 @@ class ViewController: UIViewController {
     }
     
     func getArtisData(){
-        let dbPath = Util().getDbPathString()
         do{
             //setting up database queue
-            let dbQueue = try DatabaseQueue(path:dbPath)
             //Fetch records and count from database
             try dbQueue.read { db in
                 artists = try Artist.fetchAll(db)

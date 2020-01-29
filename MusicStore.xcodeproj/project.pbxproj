@@ -18,7 +18,6 @@
 		F12072D423BCC1240029E9BA /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072D323BCC1240029E9BA /* Playlist.swift */; };
 		F12072D623BCC1F00029E9BA /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072D523BCC1F00029E9BA /* MediaType.swift */; };
 		F12072D823BCC3170029E9BA /* InVoiceLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072D723BCC3170029E9BA /* InVoiceLine.swift */; };
-		F12072DA23BCC57E0029E9BA /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072D923BCC57E0029E9BA /* Invoice.swift */; };
 		F12072DC23BCC8180029E9BA /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072DB23BCC8180029E9BA /* Genre.swift */; };
 		F12072DE23BCC96A0029E9BA /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072DD23BCC96A0029E9BA /* Employee.swift */; };
 		F12072E023BCCC8B0029E9BA /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072DF23BCCC8B0029E9BA /* Customer.swift */; };
@@ -28,7 +27,6 @@
 		F157E36D23B78CFD00C06F4B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F157E35A23B78CFD00C06F4B /* Config.swift */; };
 		F157E36E23B78CFD00C06F4B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F157E35B23B78CFD00C06F4B /* Info.plist */; };
 		F157E36F23B78CFD00C06F4B /* MusicStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F157E35D23B78CFD00C06F4B /* MusicStore.xcdatamodeld */; };
-		F157E37023B78CFD00C06F4B /* musicstore.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F157E35F23B78CFD00C06F4B /* musicstore.sqlite */; };
 		F157E37123B78CFD00C06F4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F157E36223B78CFD00C06F4B /* AppDelegate.swift */; };
 		F157E37223B78CFD00C06F4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F157E36323B78CFD00C06F4B /* SceneDelegate.swift */; };
 		F157E37323B78CFD00C06F4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F157E36523B78CFD00C06F4B /* ViewController.swift */; };
@@ -38,6 +36,8 @@
 		F157E37823B7B4C500C06F4B /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F157E37723B7B4C500C06F4B /* Album.swift */; };
 		F157E37A23B7BB1000C06F4B /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F157E37923B7BB1000C06F4B /* Artist.swift */; };
 		F157E37C23B7C20B00C06F4B /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F157E37B23B7C20B00C06F4B /* AlbumTableViewCell.swift */; };
+		F1A9219523E1FF420035AC6F /* musicstore.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F1A9219423E1FF420035AC6F /* musicstore.sqlite */; };
+		F1E4912623E1E2D900B1EE13 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4912523E1E2D900B1EE13 /* Invoice.swift */; };
 		F1ECCF7323BBC1E600B14F22 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ECCF7123BBC1E600B14F22 /* AlbumCell.swift */; };
 		F1ECCF7423BBC1E600B14F22 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1ECCF7223BBC1E600B14F22 /* AlbumCell.xib */; };
 /* End PBXBuildFile section */
@@ -77,7 +77,6 @@
 		F12072D323BCC1240029E9BA /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		F12072D523BCC1F00029E9BA /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		F12072D723BCC3170029E9BA /* InVoiceLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InVoiceLine.swift; sourceTree = "<group>"; };
-		F12072D923BCC57E0029E9BA /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Invoice.swift; path = /Users/rnss/Documents/PROJ/MusicStore/MusicStore/Models/Invoice.swift; sourceTree = "<absolute>"; };
 		F12072DB23BCC8180029E9BA /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		F12072DD23BCC96A0029E9BA /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		F12072DF23BCCC8B0029E9BA /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
@@ -92,7 +91,6 @@
 		F157E35A23B78CFD00C06F4B /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F157E35B23B78CFD00C06F4B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F157E35E23B78CFD00C06F4B /* MusicStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MusicStore.xcdatamodel; sourceTree = "<group>"; };
-		F157E35F23B78CFD00C06F4B /* musicstore.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = musicstore.sqlite; sourceTree = "<group>"; };
 		F157E36223B78CFD00C06F4B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F157E36323B78CFD00C06F4B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F157E36523B78CFD00C06F4B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +100,8 @@
 		F157E37723B7B4C500C06F4B /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		F157E37923B7BB1000C06F4B /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		F157E37B23B7C20B00C06F4B /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		F1A9219423E1FF420035AC6F /* musicstore.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = musicstore.sqlite; sourceTree = "<group>"; };
+		F1E4912523E1E2D900B1EE13 /* Invoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
 		F1ECCF7123BBC1E600B14F22 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlbumCell.swift; path = MusicStore/ViewControllers/AlbumCell.swift; sourceTree = SOURCE_ROOT; };
 		F1ECCF7223BBC1E600B14F22 /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AlbumCell.xib; path = MusicStore/ViewControllers/AlbumCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				F157E35D23B78CFD00C06F4B /* MusicStore.xcdatamodeld */,
-				F157E35F23B78CFD00C06F4B /* musicstore.sqlite */,
+				F1A9219423E1FF420035AC6F /* musicstore.sqlite */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -247,8 +247,8 @@
 				F12072D123BCBFFF0029E9BA /* PlaylistTrack.swift */,
 				F12072D323BCC1240029E9BA /* Playlist.swift */,
 				F12072D523BCC1F00029E9BA /* MediaType.swift */,
+				F1E4912523E1E2D900B1EE13 /* Invoice.swift */,
 				F12072D723BCC3170029E9BA /* InVoiceLine.swift */,
-				F12072D923BCC57E0029E9BA /* Invoice.swift */,
 				F12072DB23BCC8180029E9BA /* Genre.swift */,
 				F12072DD23BCC96A0029E9BA /* Employee.swift */,
 				F12072DF23BCCC8B0029E9BA /* Customer.swift */,
@@ -411,7 +411,7 @@
 				F157E37623B78CFD00C06F4B /* Main.storyboard in Resources */,
 				F157E37523B78CFD00C06F4B /* LaunchScreen.storyboard in Resources */,
 				F157E37423B78CFD00C06F4B /* Assets.xcassets in Resources */,
-				F157E37023B78CFD00C06F4B /* musicstore.sqlite in Resources */,
+				F1A9219523E1FF420035AC6F /* musicstore.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,10 +546,10 @@
 				F106506E23C8E19B003902C0 /* TrackViewController.swift in Sources */,
 				F12072D023BCBCE40029E9BA /* Track.swift in Sources */,
 				F1312C2123B8687B00E8791D /* Util.swift in Sources */,
-				F12072DA23BCC57E0029E9BA /* Invoice.swift in Sources */,
 				F157E37123B78CFD00C06F4B /* AppDelegate.swift in Sources */,
 				F157E36D23B78CFD00C06F4B /* Config.swift in Sources */,
 				F12072D623BCC1F00029E9BA /* MediaType.swift in Sources */,
+				F1E4912623E1E2D900B1EE13 /* Invoice.swift in Sources */,
 				F157E36F23B78CFD00C06F4B /* MusicStore.xcdatamodeld in Sources */,
 				F12072DC23BCC8180029E9BA /* Genre.swift in Sources */,
 				F106507323C8E556003902C0 /* TrackTableViewCell.swift in Sources */,

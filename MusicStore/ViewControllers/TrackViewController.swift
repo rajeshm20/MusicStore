@@ -50,9 +50,7 @@ class TrackViewController: UIViewController {
     
     func fetchTrackByAlbumID(id: Int64){
         
-        let dbPath = Util().getDbPathString()
         do {
-        let dbQueue = try DatabaseQueue(path: dbPath)
             
             try dbQueue.read { db in
                 
@@ -69,9 +67,7 @@ class TrackViewController: UIViewController {
     
     func fetchGenreand(){
         
-        let dbPath = Util().getDbPathString()
         do {
-        let dbQueue = try DatabaseQueue(path: dbPath)
             
             try dbQueue.read { db in
                 
@@ -88,9 +84,7 @@ class TrackViewController: UIViewController {
     
     func fetchMediaType(){
           
-          let dbPath = Util().getDbPathString()
           do {
-          let dbQueue = try DatabaseQueue(path: dbPath)
               
               try dbQueue.read { db in
                   
