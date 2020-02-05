@@ -20,14 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let dbPath = Util().getDbPathString()
-        do{
-            //setting up database queue
-             dbQueue = try DatabaseQueue(path:dbPath)
-            
-        } catch {
-            print(error)
-        }
+      
         let fileManager = FileManager.default
         do{
         try fileManager.copyfileToUserDocumentDirectory(forResource: "musicstore", ofType: "sqlite")
@@ -65,6 +58,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("db error: \(error)")
             }
         }
+        
+        let dbPath = Util().getDbPathString()
+              do{
+                  //setting up database queue
+                   dbQueue = try DatabaseQueue(path:dbPath)
+                  
+              } catch {
+                  print(error)
+              }
         
         return true
     }

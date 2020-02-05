@@ -9,9 +9,10 @@
 import UIKit
 import GRDB
 
-class ViewController: UIViewController {
+class AlbumViewController: UIViewController {
 
     @IBOutlet weak var albumTableView: UITableView!
+    
     var albums = [Album]()
     var albumCount: Int?=nil
     
@@ -100,7 +101,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension AlbumViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return albumCount ?? 0
     }
