@@ -14,11 +14,11 @@ struct Invoice {
     var InvoiceId: Int64
     var CustomerId: Int
     var InvoiceDate: Date
-    var BillingAddress: String
-    var BillingCity: String
-    var BillingState: String
-    var BillingCountry: String
-    var BillingPostalCode: String
+    var BillingAddress: String?
+    var BillingCity: String?
+    var BillingState: String?
+    var BillingCountry: String?
+    var BillingPostalCode: String?
     var Total: Float
     
 }

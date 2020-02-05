@@ -17,7 +17,6 @@ struct InvoiceLine {
     var TrackId: Int
     var UnitPrice: Int
     var Quantity: Int
-    var Bytes: Int
     
 }
 
@@ -36,7 +35,6 @@ extension InvoiceLine: Codable, FetchableRecord, MutablePersistableRecord {
         static let TrackId = Column(CodingKeys.TrackId)
         static let UnitPrice = Column(CodingKeys.UnitPrice)
         static let Quantity = Column(CodingKeys.Quantity)
-        static let Bytes = Column(CodingKeys.Bytes)
 
     }
     
@@ -59,9 +57,6 @@ extension InvoiceLine {
         return InvoiceLine.order(Columns.Quantity.desc)
     }
     
-    static func orderedByByes() -> QueryInterfaceRequest<InvoiceLine> {
-        return InvoiceLine.order(Columns.Bytes.desc)
-    }
     static func orderedByPrice() -> QueryInterfaceRequest<InvoiceLine> {
         return InvoiceLine.order(Columns.UnitPrice.desc)
     }

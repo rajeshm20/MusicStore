@@ -13,17 +13,17 @@ import GRDB
 struct Customer {
     // Prefer Int64 for auto-incremented database ids
     var CustomerId: Int64
-    var LastName: String
-    var FirstName: String
-    var Company: String
-    var Address: String
-    var City: String
-    var State: String
-    var Country: String
-    var PostalCode: String
-    var Phone: String
-    var Fax: String
-    var Email: String
+    var LastName: String?
+    var FirstName: String?
+    var Company: String?
+    var Address: String?
+    var City: String?
+    var State: String?
+    var Country: String?
+    var PostalCode: String?
+    var Phone: String?
+    var Fax: String?
+    var Email: String?
     var SupportRepId: Int
 
 }

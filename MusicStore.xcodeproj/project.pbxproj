@@ -13,6 +13,7 @@
 		F106506E23C8E19B003902C0 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106506D23C8E19B003902C0 /* TrackViewController.swift */; };
 		F106507323C8E556003902C0 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106507123C8E556003902C0 /* TrackTableViewCell.swift */; };
 		F106507423C8E556003902C0 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F106507223C8E556003902C0 /* TrackTableViewCell.xib */; };
+		F10C543D23EA927800656D2D /* InVoiceLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10C543C23EA927800656D2D /* InVoiceLineViewController.swift */; };
 		F12072D023BCBCE40029E9BA /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072CF23BCBCE40029E9BA /* Track.swift */; };
 		F12072D223BCBFFF0029E9BA /* PlaylistTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072D123BCBFFF0029E9BA /* PlaylistTrack.swift */; };
 		F12072D423BCC1240029E9BA /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12072D323BCC1240029E9BA /* Playlist.swift */; };
@@ -71,6 +72,7 @@
 		F106506D23C8E19B003902C0 /* TrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
 		F106507123C8E556003902C0 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		F106507223C8E556003902C0 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
+		F10C543C23EA927800656D2D /* InVoiceLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InVoiceLineViewController.swift; sourceTree = "<group>"; };
 		F12072CF23BCBCE40029E9BA /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		F12072D123BCBFFF0029E9BA /* PlaylistTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTrack.swift; sourceTree = "<group>"; };
 		F12072D323BCC1240029E9BA /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				F106506D23C8E19B003902C0 /* TrackViewController.swift */,
 				F106507123C8E556003902C0 /* TrackTableViewCell.swift */,
 				F106507223C8E556003902C0 /* TrackTableViewCell.xib */,
+				F10C543C23EA927800656D2D /* InVoiceLineViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				F12072DE23BCC96A0029E9BA /* Employee.swift in Sources */,
 				F12072D823BCC3170029E9BA /* InVoiceLine.swift in Sources */,
 				F12072D423BCC1240029E9BA /* Playlist.swift in Sources */,
+				F10C543D23EA927800656D2D /* InVoiceLineViewController.swift in Sources */,
 				F1A9219723E201FA0035AC6F /* Util.swift in Sources */,
 				F106506E23C8E19B003902C0 /* TrackViewController.swift in Sources */,
 				F12072D023BCBCE40029E9BA /* Track.swift in Sources */,
