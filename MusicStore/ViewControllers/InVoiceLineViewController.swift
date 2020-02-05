@@ -24,7 +24,6 @@ class InVoiceLineViewController: UIViewController {
         start = Date()
         print("StartTime: \(String(describing: start))")
         let operation1 = BlockOperation {
-            
             print("Querying InvoiceLine from DB is starting")
             Thread.sleep(forTimeInterval: 1)
             self.getInvoiceLineFromDB()
